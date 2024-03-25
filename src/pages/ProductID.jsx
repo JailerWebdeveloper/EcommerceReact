@@ -4,6 +4,7 @@ import { GetIDproduct } from "../Services/GetProductbyid";
 import Layout from "../Layout/Layout";
 import { FaCartPlus, FaShoppingCart, FaGrinStars } from "react-icons/fa";
 import { Cartcontext } from "../context/cart-context";
+import SimpleSlider from "../Components/shared/SliderProduct";
 
 const ProductID = () => {
   const { id } = useParams();
@@ -80,7 +81,9 @@ const ProductID = () => {
       ) : (
         <Layout>
           <div className="w-full min-h-[80vh] items-center flex md:flex-row py-4  flex-col ">
-            <div className="h-full w-full md:w-1/2  md:px-10 p-2 flex "></div>
+            <div className="h-full w-full md:w-1/2  md:px-10 p-2 flex ">
+              <SimpleSlider Imagenes={data.Imagen}/>
+            </div>
 
             <div className="h-full md:w-1/2 w-full  gap-2 px-4 justify-start items-start flex flex-col ">
               <h1 className="uppercase truncate text-5xl md:w-4/5 w-full font-extrabold text-black">
