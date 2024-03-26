@@ -6,7 +6,7 @@ import Shopcart from "../Shopcart";
 const Navbar = () => {
   return (
     <Fragment>
-      <nav className="w-full flex md:justify-center z-20 md:gap-10 justify-center items-center md:px-10 px-2 py-2">
+      <nav className="w-full flex md:justify-between z-20 md:gap-10 justify-center items-center md:px-20 px-2 py-2">
         <div className="flex gap-5 items-center z-30">
           <div className="drawer z-10 w-1/5 md:hidden">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -59,6 +59,11 @@ const Navbar = () => {
                     Redes Sociales
                   </a>
                 </li>
+                <li>
+                  <a href="Tallas" >
+                    Nuestras tallas
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -93,14 +98,14 @@ const Navbar = () => {
                 Visitanos en redes sociales
               </a>
             </li>
+            <li>
+              <a href="Tallas" target="_blank">
+                Nuestras tallas
+              </a>
+            </li>
           </ul>
         </div>
         <div className="flex items-center gap-5">
-          <label className="input input-xl rounded-full w-96 bg-slate-300 text-primary md:flex hidden items-center gap-2">
-            <FiSearch className="w-5" />
-            <input type="text" className="grow" placeholder="Search" />
-          </label>
-
           <Shopcart />
         </div>
       </nav>

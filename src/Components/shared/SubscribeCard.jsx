@@ -17,7 +17,6 @@ const SubscribeCard = () => {
         }
       );
       console.log("Respuesta del servidor:", response.data);
-      // Aquí puedes manejar la respuesta del servidor, como mostrar un mensaje de éxito
     } catch (error) {
       console.error("Error al suscribirse:", error);
       // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario

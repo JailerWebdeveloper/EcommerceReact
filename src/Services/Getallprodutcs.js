@@ -1,4 +1,3 @@
-import axios from "axios";
 
 export const GetAllProducts = async () => {
   const res = await fetch(

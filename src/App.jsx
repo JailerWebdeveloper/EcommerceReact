@@ -5,16 +5,24 @@ import Index from "./pages/Index";
 import ProductID from "./pages/ProductID";
 import Page404 from "./pages/404";
 import {  CartcontextProvider } from "./context/cart-context";
+import Carritovista from "./pages/Carritovista";
+import Pagination from "./pages/Pagination";
+import Tallas from "./pages/Tallas";
 function App() {
 
   return (
     <Fragment>
     <CartcontextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="*" element={<Page404/>}/>
           <Route path="/Producto/:id" element={<ProductID />} />
+          <Route path="/Compras" element={<Carritovista />} />
+          <Route path="/Search" element={<Pagination />} />
+          <Route path="/Tallas" element={<Tallas />} />
+
+
         </Routes>
       </BrowserRouter>
       </CartcontextProvider>

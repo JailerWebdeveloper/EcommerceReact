@@ -4,6 +4,8 @@ import Layout from "../Layout/Layout";
 import { GetAllProducts } from "../Services/Getallprodutcs";
 import ProductCard from "../Components/ProductCard";
 import SubscribeCard from "../Components/shared/SubscribeCard";
+import Amongus from "../Components/shared/Botonamongus";
+
 const Index = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -37,26 +39,34 @@ const Index = () => {
               id="HomeHero"
               className="w-full h-[90vh] flex flex-col border"
             >
-              <div className="hero w-full h-full bg-base-200">
-                <div className="hero-content text-center">
+              <div
+                className="hero h-full"
+                style={{
+                  backgroundImage: "url(/Fondo2.webp)",
+                }}
+              >
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-center text-neutral-content">
                   <div className="max-w-md">
-                    <h1 className="text-5xl font-bold">Hello there</h1>
-                    <p className="py-6">
-                      Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                      assumenda excepturi exercitationem quasi. In deleniti
-                      eaque aut repudiandae et a id nisi.
+                    <h1 className="mb-5 text-5xl font-bold">BLACKWOLF</h1>
+                    <p className="mb-5">
+                      Desde el Anime hasta lo Urbano, diseños que marcan la
+                      diferencia. Envíos a toda Colombia 🇨🇴
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <div className="flex justify-center">
+                    <Amongus/>
+                    </div>
                   </div>
                 </div>
               </div>
             </section>
 
             <section className="w-full textured md:px-24 px-5 py-20  flex flex-col  justify-center items-center">
-              <h1 className="md:text-6xl  text-4xl font-extrabold mb-10 uppercase antialiased">
+              <h1 className="md:text-6xl  mb-10 text-4xl font-extrabold uppercase antialiased">
                 Nueva coleccion
               </h1>
-              <div className="w-full grid md:grid-cols-4 grid-cols-2  grid-rows-1 ">
+              <div className="divider"></div>
+              <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
                 {data.slice(0, 4).map((shirt) => (
                   <ProductCard
                     key={shirt.id}
@@ -72,18 +82,19 @@ const Index = () => {
 
               <a
                 href="/Search"
-                className="rounded-full mt-10 text-center btn bg-transparent btn-wide link border-2"
+                className="rounded-full text-center mt-10 btn bg-transparent btn-wide link border-2"
               >
                 view more
               </a>
-              <div className="divider text-slate-400 mx-auto w-4/5"></div>
             </section>
 
             <section className="w-full textured md:px-24 px-5 py-20  flex flex-col  justify-center items-center">
               <h1 className="md:text-6xl  mb-10 text-4xl font-extrabold uppercase antialiased">
                 Top ventas
               </h1>
-              <div className="w-full grid md:grid-cols-4 grid-cols-2 grid-rows-1 gap-4">
+              <div className="divider"></div>
+
+              <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
                 {data.slice(0, 4).map((shirt) => (
                   <ProductCard
                     key={shirt.id}

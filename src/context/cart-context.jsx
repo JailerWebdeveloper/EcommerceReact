@@ -3,11 +3,24 @@ import React, { createContext, useState, useEffect } from "react";
 export const Cartcontext = createContext(null);
 export const CartcontextProvider = ({ children }) => {
   const [Cartitems, setCartitems] = useState(() => {
-    // Intenta cargar el estado del carrito desde localStorage, si no hay ninguno, devuelve un array vacío.
     const storedCart = localStorage.getItem("cartItems");
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
+  const [filter, setFilter] = useState(() => {
+    const storedFilter = localStorage.getItem("Filter");
+    return storedFilter
+      ? storedFilter
+      : "https://backend-wolf-psi.vercel.app/Productos/todos";
+  });
+
+  const updateFilter = (newFilter) => {
+    setFilter(newFilter);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("Filter", filter);
+  }, [filter]);
   const Addtocart = (producto, talla, color, cantidad, id) => {
     if (talla && color && cantidad > 0) {
       const existingItemIndex = Cartitems.findIndex(
@@ -15,12 +28,11 @@ export const CartcontextProvider = ({ children }) => {
       );
 
       if (existingItemIndex !== -1) {
-        // Clonar el array para actualizar el estado correctamente
         const updatedCart = [...Cartitems];
         updatedCart[existingItemIndex].quantity += cantidad;
         setCartitems(updatedCart);
       } else {
-        setCartitems(prevCart => [
+        setCartitems((prevCart) => [
           ...prevCart,
           {
             key: talla + "_" + color + "_" + id,
@@ -31,7 +43,7 @@ export const CartcontextProvider = ({ children }) => {
             price: producto.Precio,
             nombre: producto.NombreProducto,
             imagen: producto.Imagen[0],
-          }
+          },
         ]);
       }
     } else {
@@ -39,15 +51,24 @@ export const CartcontextProvider = ({ children }) => {
     }
   };
 
+  const RemoveFromCart = (key) => {
+    const updatedCart = Cartitems.filter((item) => item.key !== key);
+    setCartitems(updatedCart);
+  };
+
   useEffect(() => {
-    // Guardar el estado del carrito en localStorage cada vez que cambie
     localStorage.setItem("cartItems", JSON.stringify(Cartitems));
   }, [Cartitems]);
 
   const contextValue = {
     Cartitems,
     Addtocart,
+    RemoveFromCart,
+    filter,
+    updateFilter,
   };
 
-  return <Cartcontext.Provider value={contextValue}>{children}</Cartcontext.Provider>;
+  return (
+    <Cartcontext.Provider value={contextValue}>{children}</Cartcontext.Provider>
+  );
 };
