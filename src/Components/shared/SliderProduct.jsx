@@ -33,7 +33,7 @@ export default function SimpleSlider({ Imagenes }) {
         <>
           <div  className="h-[400px] rounded-2xl w-full">
             <img
-              className="object-cover rounded-2xl h-full hover:scale-105 border-2 transition-all w-full"
+              className="object-cover rounded-2xl h-full lg:hover:scale-105 border-2 transition-all w-full"
               src={`https://backend-wolf-psi.vercel.app/imagen/${Imagenes[0]}`}
             />
           </div>

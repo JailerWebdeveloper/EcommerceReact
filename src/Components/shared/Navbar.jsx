@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import { BiDialpad } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
+import { IoMdMenu } from "react-icons/io";
 import { SlSocialInstagram } from "react-icons/sl";
 import Shopcart from "../Shopcart";
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
                 htmlFor="my-drawer"
                 className="btn btn-ghost w-16 drawer-button"
               >
-                <BiDialpad className="w-full h-full" />
+                <IoMdMenu className="w-full h-full" />
               </label>
             </div>
             <div className="drawer-side">
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <li>
                   <details>
                     <summary>
-                      <BiDialpad className="w-5" />
+                      <IoMdMenu className="w-5" />
                       Categorias
                     </summary>
                     <ul className="p-2">

@@ -1,4 +1,4 @@
-button {
+.buttonamong {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,12 +18,12 @@ button {
     transition: all 0.5s ease;
   }
   
-  button:active {
+  .buttonamong:active {
     transform: scale(0.9);
     transition: all 100ms ease;
   }
   
-  button svg {
+  .buttonamong svg {
     transition: all 0.5s ease;
     z-index: 2;
   }
@@ -33,7 +33,7 @@ button {
     transition-delay: 300ms;
   }
   
-  button:hover svg {
+  .buttonamong:hover svg {
     transform: scale(3) translate(60%);
   }
   
@@ -45,12 +45,12 @@ button {
     z-index: 2;
   }
   
-  button:hover .now {
+  .buttonamong:hover .now {
     transform: translateX(10px);
     transition-delay: 300ms;
   }
   
-  button:hover .play {
+  .buttonamong:hover .play {
     transform: translateX(200%);
     transition-delay: 300ms;
   }

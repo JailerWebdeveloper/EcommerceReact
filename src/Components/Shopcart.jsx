@@ -50,7 +50,7 @@ const {Cartitems} =useContext(Cartcontext)
         </ul>
       ) : <p>¡Tu carrito está vacío!</p>}
             <div className="card-actions">
-              <a href='Compras' className="btn btn-primary btn-block">Ver carrito</a>
+              <a href='/Compras' className="btn btn-primary btn-block">Ver carrito</a>
             </div>
           </div>
         </div>

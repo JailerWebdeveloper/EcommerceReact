@@ -3,7 +3,7 @@ import "../../css/amongus.css"
 const Amongus = () => {
   return (
     <>
-      <button className="w-2/5">
+      <button className="w-2/5 buttonamong">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 36 36"

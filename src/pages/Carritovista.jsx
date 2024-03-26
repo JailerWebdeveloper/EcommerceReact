@@ -58,7 +58,7 @@ const Carritovista = () => {
   return (
     <>
       <Layout>
-        <div className="flex gap-2 justify-center px-10 md:flex-row flex-col gap-5  w-full min-h-[80vh]">
+        <div className="flex  justify-center px-10 md:flex-row flex-col gap-5  w-full min-h-[80vh]">
           <div className=" rounded-2xl border h-full md:p-4 md:w-1/2 px-10  w-full flex flex-col ">
             <div className="uppercase flex ml-10 mt-2 gap-2 items-center font-extrabold  text-4xl antialiased ">
               <svg
