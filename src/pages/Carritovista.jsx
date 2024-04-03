@@ -29,6 +29,7 @@ const Carritovista = () => {
       NombreProducto: item.nombre,
       Cantidad: item.quantity,
       Talla: item.talla,
+      Material: item.Material,
       Color: item.color,
       Subtotal: item.price * item.quantity,
     }));
@@ -59,10 +60,10 @@ const Carritovista = () => {
     <>
       <Layout>
         <div className="flex  justify-center px-10 md:flex-row flex-col gap-5  w-full min-h-[80vh]">
-          <div className=" rounded-2xl border h-full md:p-4 md:w-1/2 px-10  w-full flex flex-col ">
-            <div className="uppercase flex ml-10 mt-2 gap-2 items-center font-extrabold  text-4xl antialiased ">
+          <div className=" rounded-2xl border h-full md:p-4 md:w-1/2 md:px-10  px-2 w-full flex flex-col ">
+            <div className="uppercase flex md:ml-10 mt-2 gap-2 items-center font-extrabold text-3xl  md:text-4xl antialiased ">
               <svg
-                className="w-10 text-black"
+                className="md:w-10  w-8 text-black"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
@@ -81,9 +82,9 @@ const Carritovista = () => {
               Tu carrito
             </div>
             <div className="divider "></div>
-            <ul className="flex flex-col gap-4   w-full overflow-y-auto ">
+            <ul className="flex flex-col gap-4 py-2 w-full overflow-y-auto ">
               {Object.values(Cartitems).length ? (
-                <ul className="flex flex-col gap-2 p-1 max-h-[500px] overflow-auto">
+                <ul className="flex flex-col gap-2 md:p-1 max-h-[500px] overflow-auto">
                   {Object.values(Cartitems).map((cartItem) => (
                     <li
                       key={cartItem.key}
@@ -95,7 +96,7 @@ const Carritovista = () => {
                           className="rounded-2xl w-full h-full object-cover"
                         />
                       </div>
-                      <div className="w-3/5 flex justify-center flex-col items-start px-4 ">
+                      <div className="md:w-3/5 w-full flex justify-center flex-col items-start px-4 ">
                         <p className="text-gray-700 text-xs mb-1 font-bold">
                           {cartItem.nombre}
                         </p>
@@ -109,7 +110,7 @@ const Carritovista = () => {
                           Talla :{cartItem.talla}
                         </p>
                       </div>
-                      <div className="w-1/5 flex justify-center flex-col gap-2 items-end px-4 ">
+                      <div className="w-1/5 flex justify-start flex-col gap-2 items-end md:px-4 mt-2 mr-2 ">
                         <button
                           onClick={() => handleRemoveFromCart(cartItem.key)}
                           className="rounded-full  "
@@ -132,31 +133,13 @@ const Carritovista = () => {
                             />
                           </svg>
                         </button>
-                        <button className="">
-                          <svg
-                            className="w-6 h-6 text-blue-600"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                            />
-                          </svg>
-                        </button>
+                       
                       </div>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p>¡Tu carrito está vacío!</p>
+                <p className="font-bold">¡Tu carrito está vacío!</p>
               )}
             </ul>
           </div>
