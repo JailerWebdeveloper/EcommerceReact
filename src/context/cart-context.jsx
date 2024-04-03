@@ -40,6 +40,7 @@ export const CartcontextProvider = ({ children }) => {
             quantity: cantidad,
             talla: talla,
             color: color,
+            Material: producto.Material,
             price: producto.Precio,
             nombre: producto.NombreProducto,
             imagen: producto.Imagen[0],

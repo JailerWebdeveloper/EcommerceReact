@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /directorio-prohibido/
-Allow: /permitido/
-Sitemap: /sitemap.xml

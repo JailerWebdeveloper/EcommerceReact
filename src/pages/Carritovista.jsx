@@ -12,6 +12,7 @@ const Carritovista = () => {
     calculateTotal(Cartitems); // Calcula el total inicial cuando el carrito cambia
   }, [Cartitems]);
 
+  console.log(Cartitems)
   const calculateTotal = (cartItems) => {
     let totalAmount = 0;
     cartItems.forEach((item) => {
