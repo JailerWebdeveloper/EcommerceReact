@@ -6,7 +6,7 @@ import Shopcart from "../Shopcart";
 import React, { useState, useContext } from "react";
 import { Cartcontext } from "../../context/cart-context";
 import { useNavigate } from "react-router-dom";
-import { FaWhatsapp,FaShirt  } from "react-icons/fa6";
+import { FaWhatsapp, FaShirt } from "react-icons/fa6";
 
 const Navbar = () => {
   const { filter, updateFilter } = useContext(Cartcontext);
@@ -39,7 +39,7 @@ const Navbar = () => {
               <ul className="menu p-4 w-80 min-h-full py-10 px-2 bg-base-200 text-base content">
                 <img
                   className=" w-36 my-2 mx-auto"
-                  src="/Logo.webp"
+                  src="https://backend-wolf-psi.vercel.app/imagen/Logo.webp"
                   alt="logo"
                 />
                 <div className="divider "></div>
@@ -68,7 +68,7 @@ const Navbar = () => {
                         </button>
                       </li>
                       <li>
-                      <button
+                        <button
                           className="w-full"
                           onClick={() =>
                             handlefilter(
@@ -131,7 +131,7 @@ const Navbar = () => {
             href="/"
             className="md:w-42  flex justify-center items-center hover:bg-slate-300 rounded-xl p-2 transition-all hover:cursor-pointer"
           >
-            <img src="/Logo.webp" className="w-40" alt="Blackwolf Logo" />
+            <img src="https://backend-wolf-psi.vercel.app/imagen/Logo.webp" className="w-40" alt="Blackwolf Logo" />
           </a>
           <ul className="menu menu-horizontal md:flex hidden px-1 z-10">
             <li>
@@ -141,55 +141,55 @@ const Navbar = () => {
               <details>
                 <summary>Categorias</summary>
                 <ul className="p-2">
-                      <li>
-                        <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/camisa"
-                            )
-                          }
-                        >
-                          Camisetas
-                        </button>
-                      </li>
-                      <li>
-                      <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/buzo"
-                            )
-                          }
-                        >
-                          Buzos
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/oversize"
-                            )
-                          }
-                        >
-                          Oversizes
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
-                            )
-                          }
-                        >
-                          Pantalonetas
-                        </button>
-                      </li>
-                    </ul>
+                  <li>
+                    <button
+                      className="w-full"
+                      onClick={() =>
+                        handlefilter(
+                          "https://backend-wolf-psi.vercel.app/Product/camisa"
+                        )
+                      }
+                    >
+                      Camisetas
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="w-full"
+                      onClick={() =>
+                        handlefilter(
+                          "https://backend-wolf-psi.vercel.app/Product/buzo"
+                        )
+                      }
+                    >
+                      Buzos
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="w-full"
+                      onClick={() =>
+                        handlefilter(
+                          "https://backend-wolf-psi.vercel.app/Product/oversize"
+                        )
+                      }
+                    >
+                      Oversizes
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="w-full"
+                      onClick={() =>
+                        handlefilter(
+                          "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
+                        )
+                      }
+                    >
+                      Pantalonetas
+                    </button>
+                  </li>
+                </ul>
               </details>
             </li>
             <li>
@@ -209,7 +209,13 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-5">
           <Shopcart />
-         <a href="https://api.whatsapp.com/send?phone=573004327856&text=😎Me%20interesa%20ver%20la%20mercancía" target="_blank" className="btn md:flex items-center hidden btn-success rounded-full text-white"><FaWhatsapp className="w-[25px]"/> Contactanos!</a>
+          <a
+            href="https://api.whatsapp.com/send?phone=573004327856&text=😎Me%20interesa%20ver%20la%20mercancía"
+            target="_blank"
+            className="btn md:flex items-center hidden btn-success rounded-full text-white"
+          >
+            <FaWhatsapp className="w-[25px]" /> Contactanos!
+          </a>
         </div>
       </nav>
     </Fragment>
