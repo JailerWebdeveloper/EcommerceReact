@@ -87,10 +87,10 @@ const Index = () => {
                 href="/Search"
                 className="rounded-full text-center mt-10 btn bg-transparent btn-wide link border-2"
               >
-                view more
+                Ver Más 
               </a>
             </section>
-
+{/* 
             <section className="w-full textured md:px-24 px-5 py-20  flex flex-col  justify-center items-center">
               <h1 className="md:text-6xl  mb-10 text-4xl font-extrabold uppercase antialiased">
                 Top ventas
@@ -119,7 +119,7 @@ const Index = () => {
                 view more
               </a>
             </section>
-
+*/}
             <section className="w-full textured md:px-24 px-5 py-20  flex flex-col gap-10 justify-center items-center">
               <h1 className="text-4xl md:text-6xl uppercase font-extrabold antialiased text-center">
                 Categorias

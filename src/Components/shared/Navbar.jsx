@@ -209,7 +209,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-5">
           <Shopcart />
-         <a href="" target="_blank" className="btn md:flex items-center hidden btn-success rounded-full text-white"><FaWhatsapp className="w-[25px]"/> Contactanos!</a>
+         <a href="https://api.whatsapp.com/send?phone=573004327856&text=😎Me%20interesa%20ver%20la%20mercancía" target="_blank" className="btn md:flex items-center hidden btn-success rounded-full text-white"><FaWhatsapp className="w-[25px]"/> Contactanos!</a>
         </div>
       </nav>
     </Fragment>

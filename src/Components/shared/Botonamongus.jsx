@@ -3,7 +3,7 @@ import "../../css/amongus.css"
 const Amongus = () => {
   return (
     <>
-      <button className="w-2/5 buttonamong">
+      <a  href="/Search" className="w-2/5 buttonamong">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 36 36"
@@ -45,7 +45,7 @@ const Amongus = () => {
         </svg>
         <span class="now">eta vaina e seria!</span>
         <span class="play">GOKU!</span>
-      </button>
+      </a>
     </>
   );
 };
