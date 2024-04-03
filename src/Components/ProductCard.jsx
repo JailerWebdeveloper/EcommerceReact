@@ -22,37 +22,43 @@ const ProductCard = ({ id, Image, alt, Discount, ProductName, Price }) => {
           </div>
         </a>
   </div>*/}
+      {id ? (
+        <>
+          <a
+            href={`/Producto/${id}`}
+            className="group relative block overflow-hidden"
+          >
+            <img
+              src={`https://backend-wolf-psi.vercel.app/imagen/${Image[0]}`}
+              alt={alt}
+              className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+            />
 
-<a
-        href={`/Producto/${id}`}
-        className="group relative block overflow-hidden"
-      >
- 
+            <div className="relative border border-gray-100 bg-white p-6">
+              <span className="whitespace-nowrap bg-yellow-400 px-3 py-1.5 text-xs font-medium">
+                Descuento!
+              </span>
 
-        <img
-          src={`https://backend-wolf-psi.vercel.app/imagen/${Image[0]}`}
-          alt={alt}
-          className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
-        />
+              <h3 className="mt-4 text-lg font-medium text-gray-900">
+                {ProductName}
+              </h3>
 
-        <div className="relative border border-gray-100 bg-white p-6">
-          <span className="whitespace-nowrap bg-yellow-400 px-3 py-1.5 text-xs font-medium">
-            Descuento!
-          </span>
+              <p className="mt-1.5 text-sm text-gray-700">${Price}</p>
 
-          <h3 className="mt-4 text-lg font-medium text-gray-900">
-            {ProductName}
-          </h3>
-
-          <p className="mt-1.5 text-sm text-gray-700">${Price}</p>
-
-          <form className="mt-4">
-            <a    href={`/Producto/${id}`} className="block w-full rounded text-center bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105">
-              Comprar
-            </a>
-          </form>
-        </div>
-      </a>
+              <form className="mt-4">
+                <a
+                  href={`/Producto/${id}`}
+                  className="block w-full rounded text-center bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                >
+                  Comprar
+                </a>
+              </form>
+            </div>
+          </a>
+        </>
+      ) : (
+        <>loading...</>
+      )}
     </Fragment>
   );
 };

@@ -31,7 +31,7 @@ const ProductID = () => {
         if (products === "NotFound") {
           Navigate("/404", { replace: true });
         }
-        setData(products.producto);
+        setData(products.data);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -72,17 +72,18 @@ const ProductID = () => {
     const newCantidad = parseInt(input.value, 10);
     setcantidad((prevCantidad) => Math.max(prevCantidad, newCantidad));
   };
-
   const handleCompraunica = async () => {
-    const dataform = [{
-      NombreProducto: data.NombreProducto,
-      Cantidad: cantidad,
-      Talla: talla,
-      Color: color,
-      Subtotal: data.Precio * cantidad,
-    }];
+    const dataform = [
+      {
+        NombreProducto: data.NombreProducto,
+        Cantidad: cantidad,
+        Talla: talla,
+        Material: data.Material,
+        Color: color,
+        Subtotal: data.Precio * cantidad,
+      },
+    ];
     const requestBody = { Productos: dataform, Total: data.Precio };
-    console.log(requestBody);
     try {
       const response = await axios.post(
         `https://backend-wolf-psi.vercel.app/Creacion/factura`,
@@ -164,7 +165,7 @@ const ProductID = () => {
                   <div className="grid md:grid-cols-4 p-1 grid-cols-2 grid-rows-auto overflow-auto w-full gap-2">
                     {opciones.map((valor) => (
                       <button
-                        key={valor.index}
+                        key={valor.Talla}
                         onClick={() => seleccionartalla(valor.Talla)}
                         className={`btn w-full hover:ring transition-all ${
                           valor.Talla === talla
@@ -287,7 +288,6 @@ const ProductID = () => {
                             Producto
                           </p>
                           <p className=" text-black uppercase tracking-tight font-semibold">
-                            {" "}
                             {data.NombreProducto}
                           </p>
                         </div>

@@ -24,6 +24,8 @@ const Index = () => {
 
     fetchData();
   }, []);
+  console.log(data)
+
   return (
     <Fragment>
       {isLoading ? (
@@ -67,15 +69,16 @@ const Index = () => {
               </h1>
               <div className="divider"></div>
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
-                {data.slice(0, 4).map((shirt) => (
+              {data.slice(0, 4).map((shirt) => (
+                console.log(shirt.id),
                   <ProductCard
                     key={shirt.id}
                     id={shirt.id}
                     Discount=""
-                    alt={shirt.Descripcion}
-                    Image={shirt.Imagen}
-                    ProductName={shirt.NombreProducto}
-                    Price={shirt.Precio}
+                    alt={shirt.data.Descripcion}
+                    Image={shirt.data.Imagen}
+                    ProductName={shirt.data.NombreProducto}
+                    Price={shirt.data.Precio}
                   />
                 ))}
               </div>
@@ -95,15 +98,16 @@ const Index = () => {
               <div className="divider"></div>
 
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
-                {data.slice(0, 4).map((shirt) => (
+              {data.slice(0, 4).map((shirt) => (
+                console.log(shirt.id),
                   <ProductCard
                     key={shirt.id}
                     id={shirt.id}
                     Discount=""
-                    alt={shirt.Descripcion}
-                    Image={shirt.Imagen}
-                    ProductName={shirt.NombreProducto}
-                    Price={shirt.Precio}
+                    alt={shirt.data.Descripcion}
+                    Image={shirt.data.Imagen}
+                    ProductName={shirt.data.NombreProducto}
+                    Price={shirt.data.Precio}
                   />
                 ))}
               </div>

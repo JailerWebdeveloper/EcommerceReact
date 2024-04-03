@@ -6,7 +6,7 @@ const Sidebar = () => {
   const [maxPrice, setMaxPrice] = useState(100000);
   const { filter, updateFilter } = useContext(Cartcontext);
 
-  const handlefilter = (value) => {
+  const handlefilter = async (value) => {
     updateFilter(value);
   };
 
@@ -38,77 +38,53 @@ const Sidebar = () => {
         </div>
         <div className="divider h-1 rounded-full"></div>
         <ul className="flex flex-col justify-center gap-3 w-full">
-          <li className="flex justify-between btn btn-disabled items-center hover:bg-slate-200 hover:cursor-pointer p-2 transition-all rounded-md">
+          <li className="flex justify-between btn  items-center hover:bg-slate-200 hover:cursor-pointer p-2 transition-all rounded-md">
             <button
               onClick={() =>
                 handlefilter(
-                  "https://backend-wolf-psi.vercel.app/Producto/Naruto"
+                  "https://backend-wolf-psi.vercel.app/Product/camisa"
                 )
               }
               className="text-lg w-full antialiased"
             >
-              Camisas
+              Camisetas
             </button>
           </li>
           <li className="flex justify-between btn items-center hover:bg-slate-200 hover:cursor-pointer p-2 transition-all rounded-md">
-            <p className="text-lg antialiased">Buzos</p>
-            <svg
-              class="w-6 h-6 text-black"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
+          <button
+              onClick={() =>
+                handlefilter(
+                  "https://backend-wolf-psi.vercel.app/Product/oversize"
+                )
+              }
+              className="text-lg w-full antialiased"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m9 5 7 7-7 7"
-              />
-            </svg>
+              Oversizes
+            </button>
           </li>
-          <li className="flex justify-between items-center hover:bg-slate-200 hover:cursor-pointer p-2 transition-all rounded-md">
-            <p className="text-lg antialiased">Pantalonetas</p>
-            <svg
-              class="w-6 h-6 text-black"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
+          <li className="flex justify-between btn items-center hover:bg-slate-200 hover:cursor-pointer p-2 transition-all rounded-md">
+          <button
+              onClick={() =>
+                handlefilter(
+                  "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
+                )
+              }
+              className="text-lg w-full antialiased"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m9 5 7 7-7 7"
-              />
-            </svg>
+              Pantalonetas
+            </button>
           </li>
-          <li className="flex justify-between items-center hover:bg-slate-200 hover:cursor-pointer p-2 transition-all rounded-md">
-            <p className="text-lg antialiased">Zapatos</p>
-            <svg
-              class="w-6 h-6 text-black"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
+          <li className="flex justify-between btn items-center hover:bg-slate-200 hover:cursor-pointer p-2 transition-all rounded-md">
+          <button
+              onClick={() =>
+                handlefilter(
+                  "https://backend-wolf-psi.vercel.app/Product/buzo"
+                )
+              }
+              className="text-lg w-full antialiased"
             >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m9 5 7 7-7 7"
-              />
-            </svg>
+              Buzos
+            </button>
           </li>
         </ul>
         <div className="divider h-1 rounded-full"></div>
@@ -134,6 +110,17 @@ const Sidebar = () => {
             <span id="minPrice">${minPrice}</span>
             <span id="maxPrice">${maxPrice}</span>
           </div>
+
+          <button
+              onClick={() =>
+                handlefilter(
+                  `http://backend-wolf-psi.vercel.app/Productos/${minPrice}/${maxPrice}`
+                )
+              }
+              className="text-lg w-full btn btn-sm mt-3 antialiased"
+            >
+              Fijar precio
+            </button>
         </div>
 
         <div className="divider h-1 "></div>

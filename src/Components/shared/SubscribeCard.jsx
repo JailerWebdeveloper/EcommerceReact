@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
+import { FcLike } from "react-icons/fc";
 
 const SubscribeCard = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
+  const modalRef = useRef(null);
 
   const handleSubscribe = async () => {
     try {
@@ -17,6 +19,8 @@ const SubscribeCard = () => {
         }
       );
       console.log("Respuesta del servidor:", response.data);
+      if (response.status === 201 || response.status === 200)
+        modalRef.current.click();
     } catch (error) {
       console.error("Error al suscribirse:", error);
       // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
@@ -40,7 +44,7 @@ const SubscribeCard = () => {
           required
         />
         <input
-          type="text"
+          type="number"
           className="input w-full"
           placeholder="Teléfono"
           value={phone}
@@ -61,6 +65,22 @@ const SubscribeCard = () => {
         >
           ¡Suscríbete!
         </button>
+      </div>
+      <label ref={modalRef} htmlFor="my_modal_7" className="btn hidden">
+        open modal
+      </label>
+
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+      <div className="modal" role="dialog">
+        <div className="modal-box ">
+          <FcLike className="mx-auto my-2 text-2xl"></FcLike>
+          <h3 className="text-lg font-bold text-center">Gracias por subscribirte!</h3>
+          <p className="py-4">Te estaremos enviando nuestras mejores ofertas y descuentos!</p>
+        </div>
+        <label className="modal-backdrop" htmlFor="my_modal_7">
+          Close
+        </label>
       </div>
     </div>
   );
