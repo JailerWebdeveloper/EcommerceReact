@@ -20,7 +20,7 @@ const Sidebar = () => {
         <div className="w-full flex justify-between">
           <h1 className="font-bold uppercase text-xl">Filtros</h1>
           <svg
-            class="w-6 h-6 text-black"
+            className="w-6 h-6 text-black"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -87,7 +87,6 @@ const Sidebar = () => {
             </button>
           </li>
         </ul>
-        <div className="divider h-1 rounded-full"></div>
 
 
         <div className="divider h-1 "></div>

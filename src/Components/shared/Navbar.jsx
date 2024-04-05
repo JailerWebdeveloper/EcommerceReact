@@ -56,52 +56,212 @@ const Navbar = () => {
                     </summary>
                     <ul className="p-2">
                       <li>
-                        <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/camisa"
-                            )
-                          }
-                        >
-                          Camisetas
-                        </button>
+                        <details open>
+                          <summary>Camisetas</summary>
+                          <ul>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/Product/camisa"
+                                  )
+                                }
+                              >
+                                Todas
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Anime"
+                                  )
+                                }
+                              >
+                                Anime
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Urbano"
+                                  )
+                                }
+                              >
+                                Aesthetic
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Deportivo"
+                                  )
+                                }
+                              >
+                                Deportivas
+                              </button>
+                            </li>
+                          </ul>
+                        </details>
                       </li>
                       <li>
-                        <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/buzo"
-                            )
-                          }
-                        >
-                          Buzos
-                        </button>
+                        <details>
+                          <summary>Buzos</summary>
+                          <ul>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/Product/buzo"
+                                  )
+                                }
+                              >
+                                Todos
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Anime"
+                                  )
+                                }
+                              >
+                                Anime
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Urbano"
+                                  )
+                                }
+                              >
+                                Aesthetic
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Deportivo"
+                                  )
+                                }
+                              >
+                                Deportivos
+                              </button>
+                            </li>
+                          </ul>
+                        </details>
                       </li>
                       <li>
-                        <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/oversize"
-                            )
-                          }
-                        >
-                          Oversizes
-                        </button>
+                        <details>
+                          <summary>Oversizes</summary>
+                          <ul>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/Product/oversize"
+                                  )
+                                }
+                              >
+                                Todos
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/oversize/Anime"
+                                  )
+                                }
+                              >
+                                Anime
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/oversize/Urbano"
+                                  )
+                                }
+                              >
+                                Aesthetic
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/oversize/Deportivo"
+                                  )
+                                }
+                              >
+                                Deportivos
+                              </button>
+                            </li>
+                          </ul>
+                        </details>
                       </li>
                       <li>
-                        <button
-                          className="w-full"
-                          onClick={() =>
-                            handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
-                            )
-                          }
-                        >
-                          Pantalonetas
-                        </button>
+                        <details>
+                          <summary>Pantalonetas</summary>
+                          <ul>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
+                                  )
+                                }
+                              >
+                                Todas
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Anime"
+                                  )
+                                }
+                              >
+                                Anime
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                className="w-full"
+                                onClick={() =>
+                                  handlefilter(
+                                    "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Urbano"
+                                  )
+                                }
+                              >
+                                Aesthetic
+                              </button>
+                            </li>
+                          </ul>
+                        </details>
                       </li>
                     </ul>
                   </details>
@@ -131,7 +291,11 @@ const Navbar = () => {
             href="/"
             className="md:w-42  flex justify-center items-center hover:bg-slate-300 rounded-xl p-2 transition-all hover:cursor-pointer"
           >
-            <img src="https://backend-wolf-psi.vercel.app/imagen/Logo.webp" className="w-40" alt="Blackwolf Logo" />
+            <img
+              src="https://backend-wolf-psi.vercel.app/imagen/Logo.webp"
+              className="w-40"
+              alt="Blackwolf Logo"
+            />
           </a>
           <ul className="menu menu-horizontal md:flex hidden px-1 z-10">
             <li>
@@ -142,52 +306,201 @@ const Navbar = () => {
                 <summary>Categorias</summary>
                 <ul className="p-2">
                   <li>
-                    <button
-                      className="w-full"
-                      onClick={() =>
-                        handlefilter(
-                          "https://backend-wolf-psi.vercel.app/Product/camisa"
-                        )
-                      }
-                    >
-                      Camisetas
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className="w-full"
-                      onClick={() =>
-                        handlefilter(
-                          "https://backend-wolf-psi.vercel.app/Product/buzo"
-                        )
-                      }
-                    >
-                      Buzos
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className="w-full"
-                      onClick={() =>
-                        handlefilter(
-                          "https://backend-wolf-psi.vercel.app/Product/oversize"
-                        )
-                      }
-                    >
-                      Oversizes
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className="w-full"
-                      onClick={() =>
-                        handlefilter(
-                          "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
-                        )
-                      }
-                    >
-                      Pantalonetas
-                    </button>
+                    <ul className="menu xl:menu-horizontal lg:min-w-max  rounded-box">
+                      <li>
+                        <button
+                          className="w-full"
+                          onClick={() =>
+                            handlefilter(
+                              "https://backend-wolf-psi.vercel.app/Product/camisa"
+                            )
+                          }
+                        >
+                          Camisetas
+                        </button>
+                        <ul>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/camisa/Urbano"
+                                )
+                              }
+                            >
+                              Urbano
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/camisa/Anime"
+                                )
+                              }
+                            >
+                              Anime
+                            </button>{" "}
+                          </li>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/camisa/Deportivo"
+                                )
+                              }
+                            >
+                              Deportivas
+                            </button>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <button
+                          className="w-full"
+                          onClick={() =>
+                            handlefilter(
+                              "https://backend-wolf-psi.vercel.app/Product/buzo"
+                            )
+                          }
+                        >
+                          Buzos
+                        </button>
+                        <ul>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/buzo/Urbano"
+                                )
+                              }
+                            >
+                              Urbano
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/buzo/Anime"
+                                )
+                              }
+                            >
+                              Anime
+                            </button>
+                          </li>
+
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/buzo/Deportivo"
+                                )
+                              }
+                            >
+                              Deportivo
+                            </button>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <button
+                          className="w-full"
+                          onClick={() =>
+                            handlefilter(
+                              "https://backend-wolf-psi.vercel.app/Product/oversize"
+                            )
+                          }
+                        >
+                          Oversizes
+                        </button>
+                        <ul>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/oversize/Urbano"
+                                )
+                              }
+                            >
+                              Urbano
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/oversize/Anime"
+                                )
+                              }
+                            >
+                              Anime
+                            </button>
+                          </li>
+
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/oversize/Deportivo"
+                                )
+                              }
+                            >
+                              Deportivo
+                            </button>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <button
+                          className="w-full"
+                          onClick={() =>
+                            handlefilter(
+                              "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
+                            )
+                          }
+                        >
+                          Pantalonetas
+                        </button>
+                        <ul>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Urbano"
+                                )
+                              }
+                            >
+                              Urbano
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              className="w-full"
+                              onClick={() =>
+                                handlefilter(
+                                  "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Anime"
+                                )
+                              }
+                            >
+                              Anime
+                            </button>
+                          </li>
+
+            
+                        </ul>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </details>

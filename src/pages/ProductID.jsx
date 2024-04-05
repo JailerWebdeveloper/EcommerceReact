@@ -219,7 +219,11 @@ const ProductID = () => {
                     </button>
                     <button
                       onClick={handleCompraunica}
-                      class="button2 md:col-span-2  items-center gap-5 justify-center font-semibold uppercase"
+                      className={`button2 md:col-span-2  items-center gap-5 justify-center font-semibold uppercase ${
+                        talla == "" || color == "" || cantidad == 0
+                          ? "btn-disabled"
+                          : "btn-primary"
+                      } `}
                     >
                       <svg
                         viewBox="0 0 48 48"

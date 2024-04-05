@@ -9,8 +9,8 @@ const Pagination = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
-  const { filter } = useContext(Cartcontext);
+  const itemsPerPage = 8;
+  const { filter, updateFilter } = useContext(Cartcontext);
   const [selectedAnime, setSelectedAnime] = useState(""); // Nuevo estado para almacenar el anime seleccionado en el select
   const [searchQuery, setSearchQuery] = useState(""); // Nuevo estado para almacenar la consulta de búsqueda
   useEffect(() => {
@@ -28,7 +28,10 @@ const Pagination = () => {
     fetchData();
   }, [filter]); // Se ejecuta solo una vez al montar el componente
 
-
+  const handlefilter = async (value) => {
+    setSelectedAnime("")
+    updateFilter(value);
+  };
   const filteredData = data.filter((item) => {
     // Filtrar por anime seleccionado
     if (selectedAnime !== "" && item.data.Tematica !== selectedAnime) {
@@ -38,15 +41,15 @@ const Pagination = () => {
     // Filtrar por consulta de búsqueda
     if (
       searchQuery !== "" &&
-      !item.data.NombreProducto.toLowerCase().includes(searchQuery.toLowerCase())
+      !item.data.NombreProducto.toLowerCase().includes(
+        searchQuery.toLowerCase()
+      )
     ) {
       return false;
-      
     }
 
     return true;
   });
-  
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -59,18 +62,17 @@ const Pagination = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
-
   useEffect(() => {
     // Calculamos la cantidad de páginas disponibles basadas en los datos filtrados
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-  
+
     // Si la página actual es mayor que la cantidad de páginas disponibles,
     // establecemos la página actual en 1.
     if (currentPage > totalPages) {
       setCurrentPage(1);
     }
   }, [filter, filteredData, currentPage, itemsPerPage]);
-  
+
   return (
     <>
       {loading ? (
@@ -80,16 +82,15 @@ const Pagination = () => {
         </div>
       ) : (
         <Layout>
-          <div class="md:flex hidden ml-10 text-sm breadcrumbs"></div>
-          <div class="bg-base overflow-y-auto w-full antialiased">
-            <div class="flex flex-row relative h-full">
-              <Sidebar />
-              <div class="flex-1 overflow-auto h-full w-4/5">
-                <div className="w-full h-18 justify-between flex px-6  border-b py-5">
-                  <div className="flex justify-center  md:justify-end w-full gap-2 items-center">
+          <div className="md:flex hidden ml-10 text-sm breadcrumbs"></div>
+          <div className="bg-base overflow-y-auto w-full antialiased">
+            <div className="flex flex-row relative h-full">
+              <div className="flex-1 overflow-auto h-full w-4/5">
+                <div className="w-full h-18 justify-between md:flex-row flex-col  gap-5 flex px-6  border-b py-5">
+                  <div className="flex justify-center  md:justify-start w-full gap-2 items-center">
                     <select
                       onChange={(e) => setSelectedAnime(e.target.value)}
-                      className="select select-primary md:w-[255px] w-1/2 max-w-xs"
+                      className="select border-black md:w-[255px] w-1/2 max-w-xs"
                     >
                       <option disabled selected>
                         Selecciona Tematica
@@ -100,10 +101,10 @@ const Pagination = () => {
                       <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
                       <option value="Attack on Titan">Attack on Titan</option>
                       <option value="Bleach">Bleach</option>
-                      <option value="Fullmetal Alchemist">Fullmetal Alchemist</option>
-                      <option value="Jojo's Bizarre Adventure">Jojo's Bizarre Adventure</option>
+                      <option value="Dragon Ball">Dragon Ball</option>
+                      <option value="Baki">Baki the Grappler</option>
                     </select>
-                    <label className="input input-bordered md:w-[355px] w-1/2 input-primary flex items-center gap-2">
+                    <label className="input input-bordered md:w-[355px] w-1/2 border-black flex items-center gap-2">
                       <input
                         type="text"
                         className="grow"
@@ -124,11 +125,21 @@ const Pagination = () => {
                       </svg>
                     </label>
                   </div>
+                  <button
+                    onClick={() =>
+                      handlefilter(
+                        "https://backend-wolf-psi.vercel.app/Productos/todos"
+                      )
+                    }
+                    className="md:btn-wide   btn bg-black rounded-full text-white text-center"
+                  >
+                    Quitar filtros
+                  </button>
                 </div>
 
-                <div class="w-full h-full flex flex-col">
+                <div className="w-full h-full flex flex-col">
                   {currentItems.length !== 0 ? (
-                    <div class="grid md:grid-cols-4 py-5 px-5 grid-cols-2 gap-5 grid-rows-1">
+                    <div className="grid md:grid-cols-4 py-5 px-5 grid-cols-2 gap-5 grid-rows-1">
                       {currentItems.map((item) => (
                         <div key={item.id}>
                           <ProductCard
