@@ -24,7 +24,6 @@ const Index = () => {
 
     fetchData();
   }, []);
-  console.log(data);
 
   return (
     <Fragment>
@@ -48,7 +47,7 @@ const Index = () => {
               <div
                 className="hero h-full w-full"
                 style={{
-                  backgroundImage: "url(/Fondo2.webp)",
+                  backgroundImage: "url(https://backend-wolf-psi.vercel.app/imagen/Fondo2.webp)",
                 }}
               >
                 <div className="hero-overlay bg-opacity-60"></div>
@@ -77,7 +76,6 @@ const Index = () => {
                   .slice(0, 4)
                   .map(
                     (shirt) => (
-                      console.log(shirt.id),
                       (
                         <ProductCard
                           key={shirt.id}

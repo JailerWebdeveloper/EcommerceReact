@@ -88,40 +88,7 @@ const Sidebar = () => {
           </li>
         </ul>
         <div className="divider h-1 rounded-full"></div>
-        <div className="rounded-lg p-6 w-full max-w-md">
-          <div className="mb-4">
-            <label
-              htmlFor="price-range"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Rango de precio
-            </label>
-            <input
-              type="range"
-              id="price-range"
-              className="w-full accent-indigo-600"
-              min="0"
-              max="100000"
-              value={minPrice}
-              onChange={handlePriceChange}
-            />
-          </div>
-          <div className="flex justify-between text-gray-500">
-            <span id="minPrice">${minPrice}</span>
-            <span id="maxPrice">${maxPrice}</span>
-          </div>
 
-          <button
-              onClick={() =>
-                handlefilter(
-                  `http://backend-wolf-psi.vercel.app/Productos/${minPrice}/${maxPrice}`
-                )
-              }
-              className="text-lg w-full btn btn-sm mt-3 antialiased"
-            >
-              Fijar precio
-            </button>
-        </div>
 
         <div className="divider h-1 "></div>
         <button

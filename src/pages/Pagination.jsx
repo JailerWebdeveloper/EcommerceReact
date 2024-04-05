@@ -28,20 +28,25 @@ const Pagination = () => {
     fetchData();
   }, [filter]); // Se ejecuta solo una vez al montar el componente
 
+
   const filteredData = data.filter((item) => {
     // Filtrar por anime seleccionado
     if (selectedAnime !== "" && item.data.Tematica !== selectedAnime) {
       return false;
     }
+
     // Filtrar por consulta de búsqueda
     if (
       searchQuery !== "" &&
       !item.data.NombreProducto.toLowerCase().includes(searchQuery.toLowerCase())
     ) {
       return false;
+      
     }
+
     return true;
   });
+  
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -54,6 +59,18 @@ const Pagination = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
+
+  useEffect(() => {
+    // Calculamos la cantidad de páginas disponibles basadas en los datos filtrados
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  
+    // Si la página actual es mayor que la cantidad de páginas disponibles,
+    // establecemos la página actual en 1.
+    if (currentPage > totalPages) {
+      setCurrentPage(1);
+    }
+  }, [filter, filteredData, currentPage, itemsPerPage]);
+  
   return (
     <>
       {loading ? (
@@ -75,12 +92,12 @@ const Pagination = () => {
                       className="select select-primary md:w-[255px] w-1/2 max-w-xs"
                     >
                       <option disabled selected>
-                        Selecciona tu anime favorito
+                        Selecciona Tematica
                       </option>
                       <option value="">Todo</option>
                       <option value="One Piece">One Piece</option>
                       <option value="Naruto">Naruto</option>
-                      <option value="Death Note">Death Note</option>
+                      <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
                       <option value="Attack on Titan">Attack on Titan</option>
                       <option value="Bleach">Bleach</option>
                       <option value="Fullmetal Alchemist">Fullmetal Alchemist</option>
@@ -147,7 +164,7 @@ const Pagination = () => {
                     <button className="join-item btn">{currentPage}</button>
                     <button
                       onClick={nextPage}
-                      disabled={indexOfLastItem >= data.length}
+                      disabled={indexOfLastItem >= filteredData.length}
                       className="join-item btn"
                     >
                       »

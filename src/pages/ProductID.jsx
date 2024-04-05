@@ -121,7 +121,7 @@ const ProductID = () => {
             </div>
 
             <div className="h-full md:w-1/2 w-full  gap-2 px-4 justify-start items-start flex flex-col ">
-              <h1 className="uppercase truncate text-5xl md:w-4/5 w-full font-extrabold text-black">
+              <h1 className="uppercase truncate text-3xl md:w-4/5 w-full font-extrabold text-black">
                 {data.NombreProducto}
               </h1>
               <p className="truncate w-full ml-2 text-gray-500 font-semibold">
