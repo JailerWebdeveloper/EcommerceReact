@@ -38,7 +38,7 @@ const Carritovista = () => {
 
     try {
       const response = await axios.post(
-        `https://backend-wolf-psi.vercel.app/Creacion/factura`,
+        `https://backend-wolf.vercel.app/Creacion/factura`,
         requestBody,
         {
           headers: {
@@ -93,7 +93,7 @@ const Carritovista = () => {
                     >
                       <div className="p-1  md:w-1/5 w-auto md:p-2">
                         <img
-                          src={`https://backend-wolf-psi.vercel.app/imagen/${cartItem.imagen}`}
+                          src={`https://backend-wolf.vercel.app/imagen/${cartItem.imagen}`}
                           className="rounded-2xl w-full h-full object-cover"
                         />
                       </div>

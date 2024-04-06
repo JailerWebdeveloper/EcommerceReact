@@ -42,7 +42,7 @@ const Sidebar = () => {
             <button
               onClick={() =>
                 handlefilter(
-                  "https://backend-wolf-psi.vercel.app/Product/camisa"
+                  "https://backend-wolf.vercel.app/Product/camisa"
                 )
               }
               className="text-lg w-full antialiased"
@@ -54,7 +54,7 @@ const Sidebar = () => {
           <button
               onClick={() =>
                 handlefilter(
-                  "https://backend-wolf-psi.vercel.app/Product/oversize"
+                  "https://backend-wolf.vercel.app/Product/oversize"
                 )
               }
               className="text-lg w-full antialiased"
@@ -66,7 +66,7 @@ const Sidebar = () => {
           <button
               onClick={() =>
                 handlefilter(
-                  "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
+                  "https://backend-wolf.vercel.app/Product/pantaloneta"
                 )
               }
               className="text-lg w-full antialiased"
@@ -78,7 +78,7 @@ const Sidebar = () => {
           <button
               onClick={() =>
                 handlefilter(
-                  "https://backend-wolf-psi.vercel.app/Product/buzo"
+                  "https://backend-wolf.vercel.app/Product/buzo"
                 )
               }
               className="text-lg w-full antialiased"
@@ -92,7 +92,7 @@ const Sidebar = () => {
         <div className="divider h-1 "></div>
         <button
           onClick={() =>
-            handlefilter("https://backend-wolf-psi.vercel.app/Productos/todos")
+            handlefilter("https://backend-wolf.vercel.app/Productos/todos")
           }
           className="w-4/5 mx-auto btn bg-black rounded-full text-white text-center"
         >

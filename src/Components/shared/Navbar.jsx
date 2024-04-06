@@ -39,7 +39,7 @@ const Navbar = () => {
               <ul className="menu p-4 w-80 min-h-full py-10 px-2 bg-base-200 text-base content">
                 <img
                   className=" w-36 my-2 mx-auto"
-                  src="https://backend-wolf-psi.vercel.app/imagen/Logo.webp"
+                  src="https://backend-wolf.vercel.app/imagen/Logo.webp"
                   alt="logo"
                 />
                 <div className="divider "></div>
@@ -56,7 +56,7 @@ const Navbar = () => {
                     </summary>
                     <ul className="p-2">
                       <li>
-                        <details open>
+                        <details >
                           <summary>Camisetas</summary>
                           <ul>
                             <li>
@@ -64,7 +64,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/Product/camisa"
+                                    "https://backend-wolf.vercel.app/Product/camisa"
                                   )
                                 }
                               >
@@ -76,7 +76,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Anime"
+                                    "https://backend-wolf.vercel.app/produ/camisa/Anime"
                                   )
                                 }
                               >
@@ -88,7 +88,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Urbano"
+                                    "https://backend-wolf.vercel.app/produ/camisa/Urbano"
                                   )
                                 }
                               >
@@ -100,7 +100,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Deportivo"
+                                    "https://backend-wolf.vercel.app/produ/camisa/Deportivo"
                                   )
                                 }
                               >
@@ -119,7 +119,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/Product/buzo"
+                                    "https://backend-wolf.vercel.app/Product/buzo"
                                   )
                                 }
                               >
@@ -131,7 +131,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Anime"
+                                    "https://backend-wolf.vercel.app/produ/camisa/Anime"
                                   )
                                 }
                               >
@@ -143,7 +143,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Urbano"
+                                    "https://backend-wolf.vercel.app/produ/camisa/Urbano"
                                   )
                                 }
                               >
@@ -155,7 +155,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/camisa/Deportivo"
+                                    "https://backend-wolf.vercel.app/produ/camisa/Deportivo"
                                   )
                                 }
                               >
@@ -174,7 +174,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/Product/oversize"
+                                    "https://backend-wolf.vercel.app/Product/oversize"
                                   )
                                 }
                               >
@@ -186,7 +186,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/oversize/Anime"
+                                    "https://backend-wolf.vercel.app/produ/oversize/Anime"
                                   )
                                 }
                               >
@@ -198,7 +198,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/oversize/Urbano"
+                                    "https://backend-wolf.vercel.app/produ/oversize/Urbano"
                                   )
                                 }
                               >
@@ -210,7 +210,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/oversize/Deportivo"
+                                    "https://backend-wolf.vercel.app/produ/oversize/Deportivo"
                                   )
                                 }
                               >
@@ -229,7 +229,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
+                                    "https://backend-wolf.vercel.app/Product/pantaloneta"
                                   )
                                 }
                               >
@@ -241,7 +241,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Anime"
+                                    "https://backend-wolf.vercel.app/produ/pantaloneta/Anime"
                                   )
                                 }
                               >
@@ -253,7 +253,7 @@ const Navbar = () => {
                                 className="w-full"
                                 onClick={() =>
                                   handlefilter(
-                                    "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Urbano"
+                                    "https://backend-wolf.vercel.app/produ/pantaloneta/Urbano"
                                   )
                                 }
                               >
@@ -292,7 +292,7 @@ const Navbar = () => {
             className="md:w-42  flex justify-center items-center hover:bg-slate-300 rounded-xl p-2 transition-all hover:cursor-pointer"
           >
             <img
-              src="https://backend-wolf-psi.vercel.app/imagen/Logo.webp"
+              src="https://backend-wolf.vercel.app/imagen/Logo.webp"
               className="w-40"
               alt="Blackwolf Logo"
             />
@@ -312,7 +312,7 @@ const Navbar = () => {
                           className="w-full"
                           onClick={() =>
                             handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/camisa"
+                              "https://backend-wolf.vercel.app/Product/camisa"
                             )
                           }
                         >
@@ -324,7 +324,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/camisa/Urbano"
+                                  "https://backend-wolf.vercel.app/produ/camisa/Urbano"
                                 )
                               }
                             >
@@ -336,7 +336,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/camisa/Anime"
+                                  "https://backend-wolf.vercel.app/produ/camisa/Anime"
                                 )
                               }
                             >
@@ -348,7 +348,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/camisa/Deportivo"
+                                  "https://backend-wolf.vercel.app/produ/camisa/Deportivo"
                                 )
                               }
                             >
@@ -363,7 +363,7 @@ const Navbar = () => {
                           className="w-full"
                           onClick={() =>
                             handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/buzo"
+                              "https://backend-wolf.vercel.app/Product/buzo"
                             )
                           }
                         >
@@ -375,7 +375,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/buzo/Urbano"
+                                  "https://backend-wolf.vercel.app/produ/buzo/Urbano"
                                 )
                               }
                             >
@@ -387,7 +387,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/buzo/Anime"
+                                  "https://backend-wolf.vercel.app/produ/buzo/Anime"
                                 )
                               }
                             >
@@ -400,7 +400,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/buzo/Deportivo"
+                                  "https://backend-wolf.vercel.app/produ/buzo/Deportivo"
                                 )
                               }
                             >
@@ -414,7 +414,7 @@ const Navbar = () => {
                           className="w-full"
                           onClick={() =>
                             handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/oversize"
+                              "https://backend-wolf.vercel.app/Product/oversize"
                             )
                           }
                         >
@@ -426,7 +426,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/oversize/Urbano"
+                                  "https://backend-wolf.vercel.app/produ/oversize/Urbano"
                                 )
                               }
                             >
@@ -438,7 +438,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/oversize/Anime"
+                                  "https://backend-wolf.vercel.app/produ/oversize/Anime"
                                 )
                               }
                             >
@@ -451,7 +451,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/oversize/Deportivo"
+                                  "https://backend-wolf.vercel.app/produ/oversize/Deportivo"
                                 )
                               }
                             >
@@ -465,7 +465,7 @@ const Navbar = () => {
                           className="w-full"
                           onClick={() =>
                             handlefilter(
-                              "https://backend-wolf-psi.vercel.app/Product/pantaloneta"
+                              "https://backend-wolf.vercel.app/Product/pantaloneta"
                             )
                           }
                         >
@@ -477,7 +477,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Urbano"
+                                  "https://backend-wolf.vercel.app/produ/pantaloneta/Urbano"
                                 )
                               }
                             >
@@ -489,7 +489,7 @@ const Navbar = () => {
                               className="w-full"
                               onClick={() =>
                                 handlefilter(
-                                  "https://backend-wolf-psi.vercel.app/produ/pantaloneta/Anime"
+                                  "https://backend-wolf.vercel.app/produ/pantaloneta/Anime"
                                 )
                               }
                             >

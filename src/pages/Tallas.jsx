@@ -9,7 +9,7 @@ const Tallas = () => {
         </h1>
         <div className="divider"></div>
         <img
-          src={`https://backend-wolf-psi.vercel.app/imagen/Tallas.webp`}
+          src={`https://backend-wolf.vercel.app/imagen/Tallas.webp`}
           alt="Nuestras tallas" 
           className="mx-auto w-4/5 "
         />

@@ -11,7 +11,7 @@ const SubscribeCard = () => {
   const handleSubscribe = async () => {
     try {
       const response = await axios.post(
-        `https://backend-wolf-psi.vercel.app/Registro/Clientes`,
+        `https://backend-wolf.vercel.app/Registro/Clientes`,
         {
           Correo: email,
           Telefono: phone,

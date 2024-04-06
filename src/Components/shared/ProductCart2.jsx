@@ -5,7 +5,7 @@ const ProductCard2 = ({ id, Imagen, alt, Discount, ProductName, Price }) => {
     <Fragment>
       <a href={`/Producto/${id}`} className="group  h-full w-full block">
         <img
-          src={`https://backend-wolf-psi.vercel.app/imagen/${Imagen}`}
+          src={`https://backend-wolf.vercel.app/imagen/${Imagen}`}
           alt={alt}
           className="h-[350px] w-full object-cover sm:h-[450px]"
         />

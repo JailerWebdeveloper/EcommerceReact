@@ -36,7 +36,7 @@ const {Cartitems} =useContext(Cartcontext)
           {Object.values(Cartitems).map(cartItem => (
             <li key={cartItem.key} className='border shadow-xl rounded-xl bg-slate-100 w-full h-[100px] flex gap-1'>
               <div className='w-1/2 p-2'>
-                 <img src={`https://backend-wolf-psi.vercel.app/imagen/${cartItem.imagen}`}  className='rounded-2xl w-full h-full object-cover'/>
+                 <img src={`https://backend-wolf.vercel.app/imagen/${cartItem.imagen}`}  className='rounded-2xl w-full h-full object-cover'/>
               </div>
              <div className='w-1/2 py-2'>
                 <p className='text-gray-700 text-xs mb-1 font-bold'>{cartItem.nombre}</p>

@@ -86,7 +86,7 @@ const ProductID = () => {
     const requestBody = { Productos: dataform, Total: data.Precio };
     try {
       const response = await axios.post(
-        `https://backend-wolf-psi.vercel.app/Creacion/factura`,
+        `https://backend-wolf.vercel.app/Creacion/factura`,
         requestBody,
         {
           headers: {

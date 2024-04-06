@@ -14,7 +14,7 @@ export default function SimpleSlider({ Imagenes }) {
         >
           <img
             className="object-cover h-full w-full rounded-2xl hover:ring"
-            src={`https://backend-wolf-psi.vercel.app/imagen/${Imagenes[i]}`}
+            src={`https://backend-wolf.vercel.app/imagen/${Imagenes[i]}`}
             alt={`slide-${i}`}
           />
         </a>
@@ -34,7 +34,7 @@ export default function SimpleSlider({ Imagenes }) {
           <div  className="h-[400px] rounded-2xl w-full">
             <img
               className="object-contain rounded-2xl h-full lg:hover:scale-105 border-2 transition-all w-full"
-              src={`https://backend-wolf-psi.vercel.app/imagen/${Imagenes[0]}`}
+              src={`https://backend-wolf.vercel.app/imagen/${Imagenes[0]}`}
             />
           </div>
         </>
@@ -53,7 +53,7 @@ export default function SimpleSlider({ Imagenes }) {
                 {/* Agrega la propiedad key */}
                 <img
                   className="object-contain rounded-2xl h-full lg:hover:scale-125 transition-all w-full"
-                  src={`https://backend-wolf-psi.vercel.app/imagen/${imagen}`}
+                  src={`https://backend-wolf.vercel.app/imagen/${imagen}`}
                   alt={`slide-${index}`}
                 />
               </div>

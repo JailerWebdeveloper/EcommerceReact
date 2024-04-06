@@ -11,7 +11,7 @@ export const CartcontextProvider = ({ children }) => {
     const storedFilter = localStorage.getItem("Filter");
     return storedFilter
       ? storedFilter
-      : "https://backend-wolf-psi.vercel.app/Productos/todos";
+      : "https://backend-wolf.vercel.app/Productos/todos";
   });
 
   const updateFilter = (newFilter) => {

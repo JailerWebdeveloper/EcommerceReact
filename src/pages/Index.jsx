@@ -1,15 +1,20 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, useContext } from "react";
 import React from "react";
 import Layout from "../Layout/Layout";
 import { GetAllProducts } from "../Services/Getallprodutcs";
 import ProductCard from "../Components/ProductCard";
 import SubscribeCard from "../Components/shared/SubscribeCard";
 import Amongus from "../Components/shared/Botonamongus";
+import { Cartcontext } from "../context/cart-context";
 
 const Index = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { filter, updateFilter } = useContext(Cartcontext);
 
+  const handlefilter = async (value) => {
+    updateFilter(value);
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,7 +36,7 @@ const Index = () => {
         <div className="w-screen h-screen flex justify-center flex-col gap-2 items-center">
           <img
             className=" w-36 my-2 mx-auto"
-            src="https://backend-wolf-psi.vercel.app/imagen/Logo.webp"
+            src="https://backend-wolf.vercel.app/imagen/Logo.webp"
             alt="logo"
           />
 
@@ -47,13 +52,16 @@ const Index = () => {
               <div
                 className="hero h-full w-full"
                 style={{
-                  backgroundImage: "url(https://backend-wolf-psi.vercel.app/imagen/Fondo2.webp)",
+                  backgroundImage:
+                    "url(https://backend-wolf.vercel.app/imagen/Fondo2.webp)",
                 }}
               >
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                   <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold text-white">BLACKWOLF</h1>
+                    <h1 className="mb-5 text-5xl font-bold text-white">
+                      BLACKWOLF
+                    </h1>
                     <p className="mb-5 text-white">
                       Desde el Anime hasta lo Urbano, diseños que marcan la
                       diferencia. Envíos a toda Colombia 🇨🇴
@@ -72,23 +80,17 @@ const Index = () => {
               </h1>
               <div className="divider"></div>
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
-                {data
-                  .slice(0, 4)
-                  .map(
-                    (shirt) => (
-                      (
-                        <ProductCard
-                          key={shirt.id}
-                          id={shirt.id}
-                          Discount=""
-                          alt={shirt.data.Descripcion}
-                          Image={shirt.data.Imagen}
-                          ProductName={shirt.data.NombreProducto}
-                          Price={shirt.data.Precio}
-                        />
-                      )
-                    )
-                  )}
+                {data.slice(0, 4).map((shirt) => (
+                  <ProductCard
+                    key={shirt.id}
+                    id={shirt.id}
+                    Discount=""
+                    alt={shirt.data.Descripcion}
+                    Image={shirt.data.Imagen}
+                    ProductName={shirt.data.NombreProducto}
+                    Price={shirt.data.Precio}
+                  />
+                ))}
               </div>
 
               <a
@@ -132,45 +134,35 @@ const Index = () => {
               <h1 className="text-4xl md:text-6xl uppercase font-extrabold antialiased text-center">
                 Categorias
               </h1>
-              <div className="bg-slate-200 rounded-2xl w-full h-[80vh] gap-4 p-10 grid md:grid-rows-2 grid-rows-3 grid-cols-2 md:grid-cols-3">
-                <div className="col-span-2 relative w-full h-full hover:scale-105 transition-all hover:ring hover:cursor-pointer rounded-2xl">
+              <div className="bg-slate-200 rounded-2xl w-full h-[80vh] gap-4 p-10 grid md:grid-rows-1 grid-rows-3 grid-cols-1 md:grid-cols-3">
+                <div className="col-span-1 relative w-full h-full hover:scale-105 transition-all hover:ring hover:cursor-pointer rounded-2xl">
                   <img
-                    src="https://i.pinimg.com/736x/19/88/9f/19889f3a22ad71425b0ad054a249ad95.jpg"
+                    src="https://backend-wolf.vercel.app/imagen/CamisasAnime.webp"
                     alt=""
                     className="object-cover w-full h-full rounded-2xl"
                   />
-                  <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 z-10 uppercase md:text-6xl">
-                    Aestetic
+                  <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 z-10 text-2xl uppercase md:text-6xl">
+                    Anime
                   </p>
                 </div>
                 <div className="col-span-1 relative w-full hover:scale-105 transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
                   <img
-                    src="https://i.pinimg.com/736x/19/88/9f/19889f3a22ad71425b0ad054a249ad95.jpg"
+                    src="https://backend-wolf.vercel.app/imagen/CamisasUrbano.webp"
                     alt=""
                     className="object-cover w-full h-full rounded-2xl"
                   />
-                  <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 uppercase md:text-6xl">
-                    Urban
+                  <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 uppercase text-2xl md:text-6xl">
+                    Urbano
                   </p>
                 </div>
                 <div className="col-span-1 relative w-full hover:scale-105 transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
                   <img
-                    src="https://i.pinimg.com/736x/19/88/9f/19889f3a22ad71425b0ad054a249ad95.jpg"
+                    src="https://backend-wolf.vercel.app/imagen/CamisasDeportiva.webp"
                     alt=""
                     className="object-cover w-full h-full rounded-2xl"
                   />
-                  <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 uppercase md:text-6xl">
-                    Urban
-                  </p>
-                </div>
-                <div className="col-span-2 relative w-full h-full hover:scale-105 transition-all hover:ring hover:cursor-pointer rounded-2xl">
-                  <img
-                    src="https://i.pinimg.com/736x/19/88/9f/19889f3a22ad71425b0ad054a249ad95.jpg"
-                    alt=""
-                    className="object-cover w-full h-full rounded-2xl"
-                  />
-                  <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 uppercase md:text-6xl">
-                    Aestetic
+                  <p className="text-white font-extrabold absolute md:top-14 md:left-8 left-10 top-10 uppercase  text-2xl md:text-6xl">
+                    Deportivo
                   </p>
                 </div>
               </div>

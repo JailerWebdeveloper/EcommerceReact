@@ -8,7 +8,7 @@ const ProductCard = ({ id, Image, alt, Discount, ProductName, Price }) => {
           <div className="flex flex-col gap-2 transition-all hover:cursor-pointer rounded-2xl   hover:ring p-2">
             <div className="w-full md:h-[298px] h-[238px] rounded-2xl border-2 bg-slate-500">
               <img
-                src={`https://backend-wolf-psi.vercel.app/imagen/${Image[0]}`}
+                src={`https://backend-wolf.vercel.app/imagen/${Image[0]}`}
                 className="md:object-cover object-contain rounded-2xl w-full h-full"
                 alt={alt}
               />
@@ -29,7 +29,7 @@ const ProductCard = ({ id, Image, alt, Discount, ProductName, Price }) => {
             className="group relative block overflow-hidden"
           >
             <img
-              src={`https://backend-wolf-psi.vercel.app/imagen/${Image[0]}`}
+              src={`https://backend-wolf.vercel.app/imagen/${Image[0]}`}
               alt={alt}
               className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
             />

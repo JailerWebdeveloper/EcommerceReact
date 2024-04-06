@@ -97,6 +97,9 @@ const Pagination = () => {
                       </option>
                       <option value="">Todo</option>
                       <option value="One Piece">One Piece</option>
+                      <option value="Aesthetic">Aesthetic</option>
+                      <option value="Kimetsu no Yaiba">Kimetsu no Yaiba</option>
+                      <option value="Spy X Family">Spy X Family</option>
                       <option value="Naruto">Naruto</option>
                       <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
                       <option value="Attack on Titan">Attack on Titan</option>
@@ -128,7 +131,7 @@ const Pagination = () => {
                   <button
                     onClick={() =>
                       handlefilter(
-                        "https://backend-wolf-psi.vercel.app/Productos/todos"
+                        "https://backend-wolf.vercel.app/Productos/todos"
                       )
                     }
                     className="md:btn-wide   btn bg-black rounded-full text-white text-center"
@@ -156,7 +159,7 @@ const Pagination = () => {
                   ) : (
                     <>
                       <img
-                        src={`https://backend-wolf-psi.vercel.app/imagen/easter.jpg`}
+                        src={`https://backend-wolf.vercel.app/imagen/easter.jpg`}
                         className="w-[250px]"
                       />
                     </>
