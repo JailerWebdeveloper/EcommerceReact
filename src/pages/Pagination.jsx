@@ -149,9 +149,8 @@ const Pagination = () => {
                             id={item.id}
                             Image={item.data.Imagen}
                             ProductName={item.data.NombreProducto}
-                            alt={item.data.Tematica}
                             Price={item.data.Precio}
-                            Discount=""
+                            codigo={item.data.Stock}
                           />
                         </div>
                       ))}

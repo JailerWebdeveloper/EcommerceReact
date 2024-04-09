@@ -30,6 +30,10 @@ const Index = () => {
     fetchData();
   }, []);
 
+  const Filtered = data?.filter(
+    (filtrado) =>
+      filtrado.data.Stock === 777
+  );
   return (
     <Fragment>
       {isLoading ? (
@@ -80,12 +84,11 @@ const Index = () => {
               </h1>
               <div className="divider"></div>
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
-                {data.slice(0, 4).map((shirt) => (
+                {Filtered.slice(0,4).map((shirt) => (
                   <ProductCard
                     key={shirt.id}
                     id={shirt.id}
-                    Discount=""
-                    alt={shirt.data.Descripcion}
+                    codigo={shirt.data.Stock}
                     Image={shirt.data.Imagen}
                     ProductName={shirt.data.NombreProducto}
                     Price={shirt.data.Precio}

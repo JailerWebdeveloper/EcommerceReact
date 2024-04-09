@@ -1,6 +1,6 @@
 import { Fragment, React } from "react";
 
-const ProductCard = ({ id, Image, alt, Discount, ProductName, Price }) => {
+const ProductCard = ({ id, Image, codigo, ProductName, Price }) => {
   return (
     <Fragment>
       {/*<div className="w-full h-full ">
@@ -30,15 +30,20 @@ const ProductCard = ({ id, Image, alt, Discount, ProductName, Price }) => {
           >
             <img
               src={`https://backend-wolf.vercel.app/imagen/${Image[0]}`}
-              alt={alt}
+              alt={ProductName}
               className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
             />
 
             <div className="relative border border-gray-100 bg-white p-6">
-              {/*<span className="whitespace-nowrap bg-yellow-400 px-3 py-1.5 text-xs font-medium">
-                Descuento!
-              </span>
-*/}
+              {codigo === 777 && (
+                <>
+                  {" "}
+                  <span className="whitespace-nowrap bg-blue-400 px-3 py-1.5 text-xs font-medium">
+                    Nueva Coleccion!
+                  </span>
+                  </>
+              )}
+
               <h3 className="mt-4 text-lg font-medium w-full truncate text-gray-900">
                 {ProductName}
               </h3>
