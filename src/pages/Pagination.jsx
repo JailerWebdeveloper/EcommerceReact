@@ -28,10 +28,12 @@ const Pagination = () => {
     fetchData();
   }, [filter]); // Se ejecuta solo una vez al montar el componente
 
+  const [filtroactivo, setfiltroactivo] = useState(false);
   const handlefilter = async (value) => {
-    setSelectedAnime("")
+    setSelectedAnime("");
     updateFilter(value);
   };
+
   const filteredData = data.filter((item) => {
     // Filtrar por anime seleccionado
     if (selectedAnime !== "" && item.data.Tematica !== selectedAnime) {
@@ -47,7 +49,6 @@ const Pagination = () => {
     ) {
       return false;
     }
-
     return true;
   });
 
@@ -134,9 +135,9 @@ const Pagination = () => {
                         "https://backend-wolf.vercel.app/Productos/todos"
                       )
                     }
-                    className="md:btn-wide   btn bg-black rounded-full text-white text-center"
+                    className={`md:btn-wide btn bg-gray-800 rounded-full text-white text-center`}
                   >
-                    Quitar filtros
+                    Quitar filtros | Ver todos
                   </button>
                 </div>
 
@@ -157,10 +158,12 @@ const Pagination = () => {
                     </div>
                   ) : (
                     <>
-                      <img
-                        src={`https://backend-wolf.vercel.app/imagen/easter.jpg`}
-                        className="w-[250px]"
-                      />
+                      <div className=" flex ml-5 my-10 items-center gap-2">
+                        <p className="text-2xl font-semibold antialiased">
+                          Continuara...
+                        </p>
+                        <img src="/Luffylogo.svg" className="w-10" />
+                      </div>
                     </>
                   )}
 

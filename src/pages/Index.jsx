@@ -6,6 +6,7 @@ import ProductCard from "../Components/ProductCard";
 import SubscribeCard from "../Components/shared/SubscribeCard";
 import Amongus from "../Components/shared/Botonamongus";
 import { Cartcontext } from "../context/cart-context";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -138,7 +139,7 @@ const Index = () => {
                 Categorias
               </h1>
               <div className="bg-slate-200 rounded-2xl w-full h-[80vh] gap-4 p-10 grid md:grid-rows-1 grid-rows-3 grid-cols-1 md:grid-cols-3">
-                <div className="col-span-1 relative w-full h-full hover:scale-105 transition-all hover:ring hover:cursor-pointer rounded-2xl">
+                <Link to="/Search" onClick={handlefilter("https://backend-wolf.vercel.app/Productos/Anime")} className="col-span-1 relative w-full h-full hover:scale-105 transition-all hover:ring hover:cursor-pointer rounded-2xl">
                   <img
                     src="https://backend-wolf.vercel.app/imagen/CamisasAnime.webp"
                     alt=""
@@ -147,8 +148,8 @@ const Index = () => {
                   <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 z-10 text-2xl uppercase md:text-6xl">
                     Anime
                   </p>
-                </div>
-                <div className="col-span-1 relative w-full hover:scale-105 transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
+                </Link>
+                <Link to="/Search" onClick={handlefilter("https://backend-wolf.vercel.app/Productos/Urbano")} className="col-span-1 relative w-full hover:scale-105 transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
                   <img
                     src="https://backend-wolf.vercel.app/imagen/CamisasUrbano.webp"
                     alt=""
@@ -157,8 +158,10 @@ const Index = () => {
                   <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 uppercase text-2xl md:text-6xl">
                     Urbano
                   </p>
-                </div>
-                <div className="col-span-1 relative w-full hover:scale-105 transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
+                </Link>
+                <Link  className="col-span-1 relative w-full transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
+                <div className="absolute top-0 left-0 w-full h-full bg-gray-500 opacity-50 rounded-2xl"></div>
+
                   <img
                     src="https://backend-wolf.vercel.app/imagen/CamisasDeportiva.webp"
                     alt=""
@@ -167,7 +170,10 @@ const Index = () => {
                   <p className="text-white font-extrabold absolute md:top-14 md:left-8 left-10 top-10 uppercase  text-2xl md:text-6xl">
                     Deportivo
                   </p>
-                </div>
+                  <p className="text-white font-extrabold absolute md:top-40 md:left-10 left-10 top-20 uppercase  text-xl">
+                    Proximamente...
+                  </p>
+                </Link>
               </div>
               <SubscribeCard />
             </section>
