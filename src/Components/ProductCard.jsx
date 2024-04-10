@@ -38,10 +38,19 @@ const ProductCard = ({ id, Image, codigo, ProductName, Price }) => {
               {codigo === 777 && (
                 <>
                   {" "}
-                  <span className="whitespace-nowrap bg-blue-400 px-3 py-1.5 text-xs font-medium">
+                  <span className="whitespace-nowrap bg-blue-400 px-3  text-xs font-medium">
                     Nueva Coleccion!
                   </span>
-                  </>
+                </>
+              )}
+
+              {codigo === 555 && (
+                <>
+                  {" "}
+                  <span className="whitespace-nowrap bg-red-400 px-3  text-xs font-medium">
+                    Mas Vendidos!
+                  </span>
+                </>
               )}
 
               <h3 className="mt-4 text-lg font-medium w-full truncate text-gray-900">

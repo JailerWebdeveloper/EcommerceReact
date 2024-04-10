@@ -14,7 +14,9 @@ const Index = () => {
   const { filter, updateFilter } = useContext(Cartcontext);
 
   const handlefilter = async (value) => {
-    updateFilter(value);
+    await updateFilter(value);
+
+    window.location.href = "/Search";
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -31,10 +33,9 @@ const Index = () => {
     fetchData();
   }, []);
 
-  const Filtered = data?.filter(
-    (filtrado) =>
-      filtrado.data.Stock === 777
-  );
+  const Filtered = data?.filter((filtrado) => filtrado.data.Stock === 777);
+  const Filtered2 = data?.filter((filtrado) => filtrado.data.Stock === 555);
+
   return (
     <Fragment>
       {isLoading ? (
@@ -85,7 +86,7 @@ const Index = () => {
               </h1>
               <div className="divider"></div>
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
-                {Filtered.slice(0,4).map((shirt) => (
+                {Filtered.slice(0, 4).map((shirt) => (
                   <ProductCard
                     key={shirt.id}
                     id={shirt.id}
@@ -104,21 +105,17 @@ const Index = () => {
                 Ver Más
               </a>
             </section>
-            {/* 
             <section className="w-full textured md:px-24 px-5 py-20  flex flex-col  justify-center items-center">
               <h1 className="md:text-6xl  mb-10 text-4xl font-extrabold uppercase antialiased">
-                Top ventas
+                Más vendidos
               </h1>
               <div className="divider"></div>
-
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
-              {data.slice(0, 4).map((shirt) => (
-                console.log(shirt.id),
+                {Filtered2.slice(0, 4).map((shirt) => (
                   <ProductCard
                     key={shirt.id}
                     id={shirt.id}
-                    Discount=""
-                    alt={shirt.data.Descripcion}
+                    codigo={shirt.data.Stock}
                     Image={shirt.data.Imagen}
                     ProductName={shirt.data.NombreProducto}
                     Price={shirt.data.Precio}
@@ -130,16 +127,22 @@ const Index = () => {
                 href="/Search"
                 className="rounded-full text-center mt-10 btn bg-transparent btn-wide link border-2"
               >
-                view more
+                Ver Más
               </a>
             </section>
-*/}
             <section className="w-full textured md:px-24 px-5 py-18  flex flex-col gap-10 justify-center items-center">
               <h1 className="text-4xl md:text-6xl uppercase font-extrabold antialiased text-center">
                 Categorias
               </h1>
               <div className="bg-slate-200 rounded-2xl w-full h-[80vh] gap-4 p-10 grid md:grid-rows-1 grid-rows-3 grid-cols-1 md:grid-cols-3">
-                <Link to="/Search" onClick={handlefilter("https://backend-wolf.vercel.app/Productos/Anime")} className="col-span-1 relative w-full h-full hover:scale-105 transition-all hover:ring hover:cursor-pointer rounded-2xl">
+                <button
+                  onClick={() =>
+                    handlefilter(
+                      "https://backend-wolf.vercel.app/produ/camisa/Anime"
+                    )
+                  }
+                  className="col-span-1 relative w-full h-full hover:scale-105 transition-all hover:ring hover:cursor-pointer rounded-2xl"
+                >
                   <img
                     src="https://backend-wolf.vercel.app/imagen/CamisasAnime.webp"
                     alt=""
@@ -148,19 +151,26 @@ const Index = () => {
                   <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 z-10 text-2xl uppercase md:text-6xl">
                     Anime
                   </p>
-                </Link>
-                <Link to="/Search" onClick={handlefilter("https://backend-wolf.vercel.app/Productos/Urbano")} className="col-span-1 relative w-full hover:scale-105 transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
+                </button>
+                <button
+                  onClick={() =>
+                    handlefilter(
+                      "https://backend-wolf.vercel.app/produ/camisa/Urbano"
+                    )
+                  }
+                  className="col-span-1 relative w-full hover:scale-105 transition-all hover:ring hover:cursor-pointer h-full rounded-2xl"
+                >
                   <img
-                    src="https://backend-wolf.vercel.app/imagen/CamisasUrbano.webp"
+                    src="https://backend-wolf.vercel.app/imagen/ModeloAngelcaido1.webp"
                     alt=""
                     className="object-cover w-full h-full rounded-2xl"
                   />
                   <p className="text-white font-extrabold absolute md:top-14 md:left-14 left-10 top-10 uppercase text-2xl md:text-6xl">
                     Urbano
                   </p>
-                </Link>
-                <Link  className="col-span-1 relative w-full transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
-                <div className="absolute top-0 left-0 w-full h-full bg-gray-500 opacity-50 rounded-2xl"></div>
+                </button>
+                <Link className="col-span-1 relative w-full transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gray-500 opacity-50 rounded-2xl"></div>
 
                   <img
                     src="https://backend-wolf.vercel.app/imagen/CamisasDeportiva.webp"

@@ -26,9 +26,8 @@ const Pagination = () => {
       }
     };
     fetchData();
-  }, [filter]); // Se ejecuta solo una vez al montar el componente
+  }, [filter]); 
 
-  const [filtroactivo, setfiltroactivo] = useState(false);
   const handlefilter = async (value) => {
     setSelectedAnime("");
     updateFilter(value);
