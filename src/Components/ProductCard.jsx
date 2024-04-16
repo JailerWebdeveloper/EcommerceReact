@@ -1,4 +1,4 @@
-import { Fragment, React } from "react";
+import { Fragment } from "react";
 
 const ProductCard = ({ id, Image, codigo, ProductName, Price }) => {
   return (
@@ -23,53 +23,51 @@ const ProductCard = ({ id, Image, codigo, ProductName, Price }) => {
         </a>
   </div>*/}
       {id ? (
-        <>
-          <a
-            href={`/Producto/${id}`}
-            className="group relative block overflow-hidden"
-          >
-            <img
-              src={`https://backend-wolf.vercel.app/imagen/${Image[0]}`}
-              alt={ProductName}
-              className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
-            />
+        <a
+          href={`/Producto/${id}`}
+          className="group relative block overflow-hidden"
+        >
+          <img
+            src={`https://backend-wolf.vercel.app/imagen/${Image[0]}`}
+            alt={ProductName}
+            className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+          />
 
-            <div className="relative border border-gray-100 bg-white p-6">
-              {codigo === 777 && (
-                <>
-                  {" "}
-                  <span className="whitespace-nowrap bg-blue-400 px-3  text-xs font-medium">
-                    Nueva Coleccion!
-                  </span>
-                </>
-              )}
+          <div className="relative border border-gray-100 bg-white p-6">
+            {codigo === 777 && (
+              <>
+                {" "}
+                <span className="whitespace-nowrap bg-blue-400 px-3  text-xs font-medium">
+                  Nueva Coleccion!
+                </span>
+              </>
+            )}
 
-              {codigo === 555 && (
-                <>
-                  {" "}
-                  <span className="whitespace-nowrap bg-red-400 px-3  text-xs font-medium">
-                    Mas Vendidos!
-                  </span>
-                </>
-              )}
+            {codigo === 555 && (
+              <>
+                {" "}
+                <span className="whitespace-nowrap bg-red-400 px-3  text-xs font-medium">
+                  Mas Vendidos!
+                </span>
+              </>
+            )}
 
-              <h3 className="mt-4 text-lg font-medium w-full truncate text-gray-900">
-                {ProductName}
-              </h3>
+            <h3 className="mt-4 text-lg font-medium w-full truncate text-gray-900">
+              {ProductName}
+            </h3>
 
-              <p className="mt-1.5 text-sm text-gray-700">${Price}</p>
+            <p className="mt-1.5 text-sm text-gray-700">${Price}</p>
 
-              <form className="mt-4">
-                <a
-                  href={`/Producto/${id}`}
-                  className="block w-full rounded text-center bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
-                >
-                  Comprar
-                </a>
-              </form>
-            </div>
-          </a>
-        </>
+            <form className="mt-4">
+              <a
+                href={`/Producto/${id}`}
+                className="block w-full rounded text-center bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+              >
+                Comprar
+              </a>
+            </form>
+          </div>
+        </a>
       ) : (
         <>loading...</>
       )}

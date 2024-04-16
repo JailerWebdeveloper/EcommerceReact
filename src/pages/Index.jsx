@@ -1,17 +1,15 @@
 import { Fragment, useEffect, useState, useContext } from "react";
-import React from "react";
 import Layout from "../Layout/Layout";
 import { GetAllProducts } from "../Services/Getallprodutcs";
 import ProductCard from "../Components/ProductCard";
 import SubscribeCard from "../Components/shared/SubscribeCard";
 import Amongus from "../Components/shared/Botonamongus";
 import { Cartcontext } from "../context/cart-context";
-import { Link } from "react-router-dom";
 
 const Index = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { filter, updateFilter } = useContext(Cartcontext);
+  const { updateFilter } = useContext(Cartcontext);
 
   const handlefilter = async (value) => {
     await updateFilter(value);
@@ -169,8 +167,12 @@ const Index = () => {
                     Urbano
                   </p>
                 </button>
-                <Link className="col-span-1 relative w-full transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gray-500 opacity-50 rounded-2xl"></div>
+                <button onClick={() =>
+                    handlefilter(
+                      "https://backend-wolf.vercel.app/produ/camisa/Deportivo"
+                    )
+                  }
+                   className="col-span-1 relative w-full transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
 
                   <img
                     src="https://backend-wolf.vercel.app/imagen/CamisasDeportiva.webp"
@@ -180,10 +182,8 @@ const Index = () => {
                   <p className="text-white font-extrabold absolute md:top-14 md:left-8 left-10 top-10 uppercase  text-2xl md:text-6xl">
                     Deportivo
                   </p>
-                  <p className="text-white font-extrabold absolute md:top-40 md:left-10 left-10 top-20 uppercase  text-xl">
-                    Proximamente...
-                  </p>
-                </Link>
+
+                </button>
               </div>
               <SubscribeCard />
             </section>

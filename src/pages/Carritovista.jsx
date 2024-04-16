@@ -1,18 +1,16 @@
-import { useState, useEffect, Fragment, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Cartcontext } from "../context/cart-context";
 import Layout from "../Layout/Layout";
 
 const Carritovista = () => {
   const [total, setTotal] = useState(0);
-  const [Factura, setFactura] = useState([]);
   const { Cartitems, RemoveFromCart } = useContext(Cartcontext); // Obtén el estado y la función del contexto del carrito
 
   useEffect(() => {
     calculateTotal(Cartitems); // Calcula el total inicial cuando el carrito cambia
   }, [Cartitems]);
 
-  console.log(Cartitems)
   const calculateTotal = (cartItems) => {
     let totalAmount = 0;
     cartItems.forEach((item) => {
@@ -58,7 +56,7 @@ const Carritovista = () => {
   };
 
   return (
-    <>
+    
       <Layout>
         <div className="flex  justify-center px-10 md:flex-row flex-col gap-5  w-full min-h-[80vh]">
           <div className=" rounded-2xl border h-full md:p-4 md:w-1/2 md:px-10  px-2 w-full flex flex-col ">
@@ -93,6 +91,7 @@ const Carritovista = () => {
                     >
                       <div className="p-1  md:w-1/5 w-auto md:p-2">
                         <img
+                          alt="producto"
                           src={`https://backend-wolf.vercel.app/imagen/${cartItem.imagen}`}
                           className="rounded-2xl w-full h-full object-cover"
                         />
@@ -223,7 +222,7 @@ const Carritovista = () => {
           </div>
         </div>
       </Layout>
-    </>
+  
   );
 };
 

@@ -18,7 +18,6 @@ const SubscribeCard = () => {
           Nombre: name,
         }
       );
-      console.log("Respuesta del servidor:", response.data);
       if (response.status === 201 || response.status === 200)
         modalRef.current.click();
     } catch (error) {

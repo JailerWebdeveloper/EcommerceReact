@@ -5,7 +5,6 @@ export const GetIDproduct = async (id) => {
   
     try {
       const data = await res.json();
-      console.log(data)
       return data;
     } catch {
       return "NotFound";

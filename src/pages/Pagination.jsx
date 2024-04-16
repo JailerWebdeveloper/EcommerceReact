@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import  { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import Sidebar from "../Components/shared/Sidebar";
 import Layout from "../Layout/Layout";
 import { Cartcontext } from "../context/cart-context";
 import ProductCard from "../Components/ProductCard";
@@ -26,7 +25,7 @@ const Pagination = () => {
       }
     };
     fetchData();
-  }, [filter]); 
+  }, [filter]);
 
   const handlefilter = async (value) => {
     setSelectedAnime("");
@@ -96,8 +95,9 @@ const Pagination = () => {
                         Selecciona Tematica
                       </option>
                       <option value="">Todo</option>
-                      <option value="One Piece">One Piece</option>
                       <option value="Aesthetic">Aesthetic</option>
+                      <option value="One Piece">One Piece</option>
+                      <option value="Berserk">Berserk</option>
                       <option value="Kimetsu no Yaiba">Kimetsu no Yaiba</option>
                       <option value="Spy X Family">Spy X Family</option>
                       <option value="Naruto">Naruto</option>
@@ -156,14 +156,12 @@ const Pagination = () => {
                       ))}
                     </div>
                   ) : (
-                    <>
                       <div className=" flex ml-5 my-10 items-center gap-2">
                         <p className="text-2xl font-semibold antialiased">
                           Continuara...
                         </p>
-                        <img src="/Luffylogo.svg" className="w-10" />
+                        <img alt="logoluffy" src="/Luffylogo.svg" className="w-10" />
                       </div>
-                    </>
                   )}
 
                   {/* Botones de paginación */}

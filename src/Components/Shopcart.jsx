@@ -1,11 +1,10 @@
-import { useState,useEffect, Fragment, useContext } from 'react';
+import { useContext } from 'react';
 import { Cartcontext } from '../context/cart-context';
 const ShopCart = () => {
   
 const {Cartitems} =useContext(Cartcontext)
   
   return (
-    <Fragment>
       <div className="dropdown dropdown-end z-10 ">
         <div tabIndex="0" role="button" className="btn btn-ghost btn-circle">
           <div className="indicator">
@@ -54,9 +53,7 @@ const {Cartitems} =useContext(Cartcontext)
             </div>
           </div>
         </div>
-      </div>
-    </Fragment>
-    
+      </div>    
   );
 };
 
