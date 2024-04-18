@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +7,7 @@ export default function SimpleSlider({ Imagenes }) {
     customPaging: function (i) {
       return (
         <a
-          className={`w-full rounded-2xl h-full ${
+          className={`w-full  rounded-2xl h-full ${
             Imagenes.length === 1 ? "hidden" : ""
           }`}
         >
@@ -30,14 +29,13 @@ export default function SimpleSlider({ Imagenes }) {
   return (
     <>
       {Imagenes.length === 1 ? (
-        <>
-          <div  className="h-[400px] rounded-2xl w-full">
+          <div  className="h-[400px] rounded-2xl  w-full">
             <img
-              className="object-contain rounded-2xl h-full lg:hover:scale-105 border-2 transition-all w-full"
+            alt="carousel"
+              className="object-contain rounded-2xl h-full   transition-all w-full"
               src={`https://backend-wolf.vercel.app/imagen/${Imagenes[0]}`}
             />
           </div>
-        </>
       ) : (
         <Slider
           {...settings}

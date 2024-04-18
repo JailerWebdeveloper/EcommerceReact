@@ -32,7 +32,6 @@ const ProductCard = ({ id, Image, codigo, ProductName, Price }) => {
             alt={ProductName}
             className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
           />
-
           <div className="relative border border-gray-100 bg-white p-6">
             {codigo === 777 && (
               <>
