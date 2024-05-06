@@ -4,7 +4,6 @@ import { GetIDproduct } from "../Services/GetProductbyid";
 import Layout from "../Layout/Layout";
 import { FaCartPlus, FaShoppingCart, FaGrinStars } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
-import { IoShirt } from "react-icons/io5";
 import { Cartcontext } from "../context/cart-context";
 import axios from "axios";
 import SimpleSlider from "../Components/shared/SliderProduct";
@@ -166,17 +165,28 @@ const ProductID = () => {
 
                 <div className="flex items-center gap-2  ml-3 w-full flex-wrap">
                   {opciones.map((valor, index) => (
-                    <button
-                      key={index}
-                      onClick={() => seleccionartalla(valor.Talla)}
-                      className={`btn rounded-none w-14 lg:w-16 hover:ring transition-all ${
-                        valor.Talla === talla
-                          ? "bg-black text-white border-none"
-                          : "text-black border-2 border-gray-400 "
-                      } `}
+                    <div
+                      key={index + 1}
+                      className="tooltip before:w-32 before:text-wrap before:h-18 tooltip-top before:text-black before:border before:rounded-md before:font-semibold before:bg-gray-200"
+                      data-tip={`${
+                        valor.Talla == "S"
+                          ? "Largo: 64cm  Ancho: 48cm"
+                          : valor.Talla == "M"
+                          ? "Largo: 68cm  Ancho: 50cm"
+                          : valor.Talla == "L" ? "Largo: 70cm  Ancho: 52cm" : valor.Talla =="XL" ? "Largo: 72cm  Ancho: 54cm" : "LLAMEN AL INGENIERO"
+                      }`}
                     >
-                      {valor.Talla}
-                    </button>
+                      <button
+                        onClick={() => seleccionartalla(valor.Talla)}
+                        className={`btn rounded-none w-14 lg:w-16 hover:ring transition-all ${
+                          valor.Talla === talla
+                            ? "bg-black text-white border-none"
+                            : "text-black border-2 border-gray-400 "
+                        } `}
+                      >
+                        {valor.Talla}
+                      </button>
+                    </div>
                   ))}
                   {/*<a href="#tallas" className="text-gray-500 text-sm ml-1 lg:ml-32 mt-2 link  flex items-center gap-2">
                     <IoShirt />

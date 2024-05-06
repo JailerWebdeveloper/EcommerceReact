@@ -3,8 +3,9 @@ import Layout from "../Layout/Layout";
 import { GetAllProducts } from "../Services/Getallprodutcs";
 import ProductCard from "../Components/ProductCard";
 import SubscribeCard from "../Components/shared/SubscribeCard";
-import Amongus from "../Components/shared/Botonamongus";
 import { Cartcontext } from "../context/cart-context";
+import ParrotButton from "../Components/shared/Parrotbutton";
+import LazyLoad from "react-lazyload";
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -71,7 +72,7 @@ const Index = () => {
                       diferencia. Envíos a toda Colombia 🇨🇴
                     </p>
                     <div className="flex justify-center">
-                      <Amongus />
+                      <ParrotButton />
                     </div>
                   </div>
                 </div>
@@ -85,14 +86,16 @@ const Index = () => {
               <div className="divider"></div>
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
                 {Filtered.slice(0, 4).map((shirt) => (
-                  <ProductCard
-                    key={shirt.id}
-                    id={shirt.id}
-                    codigo={shirt.data.Stock}
-                    Image={shirt.data.Imagen}
-                    ProductName={shirt.data.NombreProducto}
-                    Price={shirt.data.Precio}
-                  />
+                  <LazyLoad key={shirt.id} height={200} once>
+                    <ProductCard
+                      key={shirt.id}
+                      id={shirt.id}
+                      codigo={shirt.data.Stock}
+                      Image={shirt.data.Imagen}
+                      ProductName={shirt.data.NombreProducto}
+                      Price={shirt.data.Precio}
+                    />
+                  </LazyLoad>
                 ))}
               </div>
 
@@ -110,14 +113,16 @@ const Index = () => {
               <div className="divider"></div>
               <div className="w-full grid md:grid-cols-4 grid-cols-1 grid-rows-1 gap-4">
                 {Filtered2.slice(0, 4).map((shirt) => (
-                  <ProductCard
-                    key={shirt.id}
-                    id={shirt.id}
-                    codigo={shirt.data.Stock}
-                    Image={shirt.data.Imagen}
-                    ProductName={shirt.data.NombreProducto}
-                    Price={shirt.data.Precio}
-                  />
+                  <LazyLoad key={shirt.id} height={300} once>
+                    <ProductCard
+                      key={shirt.id}
+                      id={shirt.id}
+                      codigo={shirt.data.Stock}
+                      Image={shirt.data.Imagen}
+                      ProductName={shirt.data.NombreProducto}
+                      Price={shirt.data.Precio}
+                    />
+                  </LazyLoad>
                 ))}
               </div>
 
@@ -167,13 +172,14 @@ const Index = () => {
                     Urbano
                   </p>
                 </button>
-                <button onClick={() =>
+                <button
+                  onClick={() =>
                     handlefilter(
                       "https://backend-wolf.vercel.app/produ/camisa/Deportivo"
                     )
                   }
-                   className="col-span-1 relative w-full transition-all hover:ring hover:cursor-pointer h-full rounded-2xl">
-
+                  className="col-span-1 relative w-full transition-all hover:ring hover:cursor-pointer h-full rounded-2xl"
+                >
                   <img
                     src="https://backend-wolf.vercel.app/imagen/CamisasDeportiva.webp"
                     alt=""
@@ -182,7 +188,6 @@ const Index = () => {
                   <p className="text-white font-extrabold absolute md:top-14 md:left-8 left-10 top-10 uppercase  text-2xl md:text-6xl">
                     Deportivo
                   </p>
-
                 </button>
               </div>
               <SubscribeCard />

@@ -2,7 +2,6 @@ import "../../css/amongus.css"
 
 const Amongus = () => {
   return (
-    <>
       <a  href="/Search" className="w-2/5 buttonamong">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +45,6 @@ const Amongus = () => {
         <span className="now">eta vaina e seria!</span>
         <span className="play">GOKU!</span>
       </a>
-    </>
   );
 };
 
